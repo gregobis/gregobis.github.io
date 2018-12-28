@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<article class="{{ page.background-color }}--bg py-5">
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12">
+        <header>
+          <h1 class="text-center">{{ page.title | escape }}</h1>
+        </header>
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="py-5">
+  <div class="container">
+    <div class="row my-5">
+      <div class="mx-auto col-md-6 col-lg-3 my-1">
+        <a href="/projects" class="btn malachite--btn w-100">
+          All
+        </a>
+      </div>
+      {% for category in site.categories %}
+        <div class="mx-auto col-md-6 col-lg-3 my-1">
+          <a href="/projects/{{ category.slug }}" class="btn {{category.background-color}}--btn w-100">
+            {{ category.title }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="row text-center">
+      {% for project in site.projects %}
+        {% if page.category %}
+          {% if project.categories contains {{page.category}} %}
+            {% include project-template.html %}
+          {% endif %}
+        {% else %}
+          {% include project-template.html %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</article>
