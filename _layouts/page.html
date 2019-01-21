@@ -33,8 +33,8 @@ layout: default
 
       {% for project in site.projects reversed %}
         {% if project.featured == true %}
-          {% if page.category %} hello
-            {% if project.categories contains {{ page.category }} %}
+          {% if page.category %}
+            {% if project.categories contains {{page.category}} %}
               {% capture count %}
                 {{ count | plus: '1' }}
               {% endcapture %}
@@ -58,7 +58,7 @@ layout: default
       {% for project in site.projects reversed %}
         {% if project.featured == false %}
           {% if page.category %}
-            {% if project.categories contains {{ page.category }} %}
+            {% if project.categories contains {{page.category}} %}
               {% include project-template.html %}
             {% endif %}
           {% else %}
