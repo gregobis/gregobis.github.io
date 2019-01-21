@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<article class="{{ page.background-color }}--bg white--text py-5">
+<article class="{{ page.background-color }}--bg py-5">
   <div class="container my-5">
     <div class="row">
       <div class="col-12">
         <header>
-          <h1 class="text-center white--text">{{ page.title | escape }}</h1>
+          <h1 class="text-center">{{ page.title | escape }}</h1>
         </header>
       </div>
     </div>
@@ -24,14 +24,19 @@ layout: default
     <div class="row">
       <div class="col-12">
         <header>
-          <h2 class="text-center">Latest Projects</h2>
+          <h2 class="text-center">Projects</h2>
         </header>
       </div>
     </div>
     <div class="row py-4">
 
-      {% for project in site.projects limit:3 %}
-        {% include project-template.html %}
+
+      {% for project in site.projects limit: 3 %}
+        {% if project.featured == true %}
+
+          {% include project-template.html %}
+
+        {% endif %}
       {% endfor %}
 
     </div>

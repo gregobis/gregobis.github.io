@@ -30,15 +30,49 @@ layout: default
       {% endfor %}
     </div>
     <div class="row text-center">
+
       {% for project in site.projects %}
-        {% if page.category %}
-          {% if project.categories contains {{page.category}} %}
-            {% include project-template.html %}
+        {% if project.featured == true %}
+          {% if page.category %} hello
+            {% if project.categories contains {{ page.category }} %}
+              {% capture count %}
+                {{ count | plus: '1' }}
+              {% endcapture %}
+              {% if count <= '3' %}
+                {% include project-template.html %}
+              {% endif %}
+            {% endif %}
+          {% else %}
+            {% capture count %}
+              {{ count | plus: '1' }}
+            {% endcapture %}
+
+            {% if count <= '3' %}
+              {% include project-template.html %}
+            {% endif %}
           {% endif %}
-        {% else %}
-          {% include project-template.html %}
+
         {% endif %}
       {% endfor %}
+
+      {% for project in site.projects %}
+        {% if project.featured == false %}
+          {% if page.category %}
+            {% if project.categories contains {{ page.category }} %}
+              {% include project-template.html %}
+            {% endif %}
+          {% else %}
+            {% capture count %}
+              {{ count | plus: '1' }}
+            {% endcapture %}
+
+            {% if count <= '3' %}
+              {% include project-template.html %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
     </div>
   </div>
 </article>
