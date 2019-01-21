@@ -31,7 +31,7 @@ layout: default
     </div>
     <div class="row text-center">
 
-      {% for project in site.projects %}
+      {% for project in site.projects reversed %}
         {% if project.featured == true %}
           {% if page.category %} hello
             {% if project.categories contains {{ page.category }} %}
@@ -55,7 +55,7 @@ layout: default
         {% endif %}
       {% endfor %}
 
-      {% for project in site.projects %}
+      {% for project in site.projects reversed %}
         {% if project.featured == false %}
           {% if page.category %}
             {% if project.categories contains {{ page.category }} %}

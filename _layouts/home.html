@@ -31,7 +31,7 @@ layout: default
     <div class="row py-4">
 
 
-      {% for project in site.projects limit: 3 %}
+      {% for project in site.projects reversed limit: 3 %}
         {% if project.featured == true %}
 
           {% include project-template.html %}
