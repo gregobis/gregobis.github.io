@@ -3,6 +3,7 @@ layout: post
 band: Pledge Drive
 album: Missing Time
 label: Bernice
+featured: true
 year: 2018
 categories: [engineering, mixing]
 embed: >
