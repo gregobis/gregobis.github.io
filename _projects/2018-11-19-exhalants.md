@@ -3,7 +3,7 @@ layout: post
 band: exhalants
 album: exhalants
 label: Self Sabotage Records
-featured: true
+featured: false
 year: 2018
 categories: [mastering]
 embed: >
