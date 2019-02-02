@@ -1,0 +1,32 @@
+{% if project.featured and i < 3 %}
+    <div class="col-12 col-sm-6 col-md-4 py-4 text-center d-flex flex-column justify-content-between mx-auto">
+      <div class="my-3">
+        <h4>{{ project.band }}</h4>
+        <h5 class="font-italic">{{ project.album }}</h5>
+        <h6 class="text-uppercase">
+          {% if project %}
+            {% assign categories = project.categories %}
+          {% endif %}
+          {% for category in categories %}
+            {% assign categoryObject = site.categories | where: "object-id", category  | first %}
+            <span class="darken-{{ categoryObject.background-color }}--text">{{categoryObject.title}}</span>{% unless forloop.last %} | {% endunless %}
+          {% endfor %}
+        </h6>
+      </div>
+      {% if project.embed %}
+        <div>
+          {{ project.embed }}
+        </div>
+      {% else %}
+        <div class="my-3">
+          <a href="{{ project.url }}">link</a>
+        </div>
+      {% endif %}
+      <div class="my-3">
+        <h5>{{ project.label }}</h5>
+        <h6>{{ project.year }}</h6>
+      </div>
+    </div>
+    {% assign i = i | plus:1 %}
+{% else %}
+{% endif %}
