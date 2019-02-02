@@ -3,7 +3,7 @@ layout: post
 band: Landowner
 album: Blatant
 label: Born Yesterday Records
-featured: true
+featured: false
 year: 2018
 categories: [mastering]
 embed: >
