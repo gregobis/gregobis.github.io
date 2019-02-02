@@ -1,7 +1,7 @@
 ---
 layout: post
 band: Victor Lovlorne
-album: Victor Lovlorne
+album: self-titled
 label: Self Sabotage Records
 featured: false
 year: 2018
