@@ -3,7 +3,7 @@ layout: post
 band: Trey Gruber
 album: Herculean House of Cards
 label: Numero Group
-featured: true
+featured: True
 year: 2019
 categories: [mastering]
 embed: >
