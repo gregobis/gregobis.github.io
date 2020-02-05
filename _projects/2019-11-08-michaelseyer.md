@@ -2,7 +2,7 @@
 layout: post
 band: Michael Seyer
 album: Nostalgia
-label:
+label: self-released
 featured: false
 year: 2019
 categories: [mastering]
