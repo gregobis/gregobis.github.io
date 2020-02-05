@@ -3,7 +3,7 @@ layout: post
 band: Deeper
 album: Run
 label: Firetalk Records
-featured: True
+featured: false
 year: 2019
 categories: [mastering]
 embed: >
