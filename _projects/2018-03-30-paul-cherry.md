@@ -3,7 +3,7 @@ layout: post
 band: Paul Cherry
 album: Flavour
 label: Feel Trip Records
-featured: True
+featured: false
 year: 2018
 categories: [mastering]
 embed: >
