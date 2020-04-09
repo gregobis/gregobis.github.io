@@ -3,7 +3,7 @@ layout: post
 band: Bill Mackay & Ryley Walker
 album: Land of Plenty
 label: Whistler Records
-featured: true
+featured: false
 year: 2015
 categories: [mastering]
 embed: >
