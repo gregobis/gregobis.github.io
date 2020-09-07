@@ -3,7 +3,7 @@ layout: post
 band: Deeper
 album: Auto-Pain
 label: Firetalk Records
-featured: True
+featured: false
 year: 2020
 categories: [mastering]
 embed: >
