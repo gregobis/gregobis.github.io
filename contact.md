@@ -28,7 +28,7 @@ background-color: kournikova
       </div>
       <div class="col-6 mx-auto">
       <img class="img-responsive"
-  src="/assets/images/greg-obis.jpg"
+  src="/assets/images/greg-obis.jpeg"
   alt="Greg Obis">   
       </div>
     </div>
