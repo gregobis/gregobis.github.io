@@ -1,7 +1,7 @@
 ---
 layout: post
 band: Daniel Knox
-album: Half Heart: Songs From Twin Peaks
+album: Half Heart...
 label: HB Johnson Presents. . .
 featured: false
 year: 2020

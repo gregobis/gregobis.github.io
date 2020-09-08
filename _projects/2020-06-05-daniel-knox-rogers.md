@@ -1,7 +1,7 @@
 ---
 layout: post
 band: Daniel Knox
-album: You Are My Friend: The Songs of Mister Rogers
+album: You Are My Friend...
 label: HB Johnson Presents. . .
 featured: false
 year: 2020
