@@ -3,7 +3,7 @@ layout: post
 band: Irreversible Entanglements
 album: Who Sent You?
 label: International Anthem
-featured: True
+featured: false
 year: 2019
 categories: [mastering]
 embed: >
