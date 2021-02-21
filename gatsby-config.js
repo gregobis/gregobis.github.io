@@ -25,7 +25,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Greg Obis | Audio Engineer',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
@@ -33,6 +33,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        preset: "@theme-ui/preset-roboto",
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
