@@ -18,15 +18,13 @@ background-color: kournikova
 
 <article class="py-5">
   <div class="container my-5">
-    <div class="row">
-      <div class="col-6 mx-auto">
-      {%- if site.email -%}
-          <a href="mailto:{{ site.email }}">
-            {{ site.email }}
-          </a>
-      {%- endif -%}
+    <div class="row flex-column-reverse flex-md-row">
+      <div class="col-md-6 mx-auto">
+        <h2 class="text-center">Contact me</h2>
+        <p class="text-center">Tell me about your project.</p>
+        {%- include contact-form.html -%}
       </div>
-      <div class="col-6 mx-auto">
+      <div class="col-md-6 mb-4 mb-md-0 mx-auto">
       <img class="img-responsive"
   src="/assets/images/greg-obis.jpeg"
   alt="Greg Obis">   
