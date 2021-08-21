@@ -2,7 +2,7 @@
 layout: post
 band: Gary, Indiana
 album: Alien 3
-lsabel: Fire Talk Records
+label: Fire Talk Records
 featured: false
 year: 2020
 categories: [mastering]

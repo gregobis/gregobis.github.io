@@ -2,7 +2,7 @@
 layout: post
 band: Honey Slides
 album: Arrivederci, Motherfucker! (feat. Macie Stewart)
-lsabel: self-released
+label: self-released
 featured: false
 year: 2020
 categories: [mastering]

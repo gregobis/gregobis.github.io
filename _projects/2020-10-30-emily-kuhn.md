@@ -2,7 +2,7 @@
 layout: post
 band: Emily Kuhn
 album: Sky Stories
-lsabel: self-released
+label: self-released
 featured: false
 year: 2020
 categories: [mastering]

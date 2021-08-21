@@ -2,7 +2,7 @@
 layout: post
 band: Minor Moon
 album: Tethers
-lsabel: Whatever's Clever
+label: Whatever's Clever
 featured: false
 year: 2020
 categories: [mastering]

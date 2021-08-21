@@ -2,7 +2,7 @@
 layout: post
 band: Allison Van Liere
 album: I Only Answer To My Name Now
-lsabel: self-released
+label: self-released
 featured: false
 year: 2020
 categories: [mastering]
