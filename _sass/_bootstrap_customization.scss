@@ -40,6 +40,16 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Nunito+Sans:400,600" !d
     }
   }
 }
+a.social-icon{
+  svg{
+    fill: black; 
+  }
+  &:hover, &.active{
+    svg{
+      fill: #3DFFD7;
+    }
+  }
+}
 
 // Navbar ======================================================================
 
