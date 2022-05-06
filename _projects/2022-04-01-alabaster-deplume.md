@@ -1,0 +1,11 @@
+---
+layout: post
+band: Duster
+album: Together
+label: Numero Group
+featured: true
+year: 2021
+categories: [mastering]
+embed: >
+  <iframe style="border: 0; width: 170px; height: 170px;" src="https://bandcamp.com/EmbeddedPlayer/album=1062193654/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="https://dusternumero.bandcamp.com/album/together">Together by Duster</a></iframe>
+---
