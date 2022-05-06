@@ -3,7 +3,7 @@ layout: post
 band: Will Stratton
 album: The Changing Wilderness
 label: Bella Union
-featured: True
+featured: false
 year: 2021
 categories: [mastering]
 embed: >
