@@ -1,0 +1,37 @@
+.brand {
+    color: #1a1a1a;
+    display: inlie-block;
+    font-family: "terminal_grotesque",SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1;
+    line-height: inherit;
+    margin-bottom: 0.5rem;
+    margin-right: 2rem;
+    padding-bottom: 0.3359375rem;
+    padding-top: 0.3359375rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.navBar {
+    margin-left: auto;
+    display: flex;
+}
+.navBarNav{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.navItem {
+    margin-right: 2rem;
+}
+.navLink{
+    color: rgba(0,0,0,0.3);
+    padding: .5rem 0.715rem;
+    text-decoration: none;
+    font-family: "Roboto"
+}
+.navLink:hover{
+    color: #1a1a1a;
+}
