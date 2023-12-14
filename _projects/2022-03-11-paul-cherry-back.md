@@ -3,7 +3,7 @@ layout: post
 band: Paul Cherry
 album: Back On The Music!
 label: self-released
-featured: true
+featured: false
 year: 2022
 categories: [mastering]
 embed: >
