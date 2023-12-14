@@ -3,7 +3,7 @@ layout: post
 band: Lifeguard
 album: Dressed in Trenches
 label: Matador Records
-featured: true
+featured: false
 year: 2023
 categories: [mastering]
 embed: >

@@ -1,6 +1,6 @@
 ---
 layout: post
-band: Gary, Indiana
+band: Mandy, Indiana
 album: Alien 3
 label: Fire Talk Records
 featured: false
