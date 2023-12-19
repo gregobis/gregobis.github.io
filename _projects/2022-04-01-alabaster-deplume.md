@@ -3,7 +3,7 @@ layout: post
 band: Alabaster Deplume
 album: GOLD
 label: International Anthem
-featured: true
+featured: false
 year: 2022
 categories: [mastering]
 embed: >

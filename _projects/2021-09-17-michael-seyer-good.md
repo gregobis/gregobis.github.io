@@ -3,7 +3,7 @@ layout: post
 band: Michael Seyer
 album: A Good Fool
 label: self-released
-featured: true
+featured: false
 year: 2021
 categories: [mastering]
 embed: >
