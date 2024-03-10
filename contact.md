@@ -18,11 +18,10 @@ background-color: kournikova
 
 <article class="py-5">
   <div class="container my-5">
-    <div class="row flex-column-reverse flex-md-row">
-      <div class="col-md-6 mx-auto">
+    <div class="row flex-column">
+      <div class="col-md-6 mx-auto pb-4">
         <h2 class="text-center">Contact me</h2>
-        <p class="text-center">Tell me about your project.</p>
-        {%- include contact-form.html -%}
+        <p class="text-center">I'd love to hear about your project! Please reach out to me at <a href="mailto:gregobis@gmail.com">gregobis@gmail.com</a>, and I'll do my best to get back to you promptly.</p>
       </div>
       <div class="col-md-6 mb-4 mb-md-0 mx-auto">
       <img class="img-responsive"
