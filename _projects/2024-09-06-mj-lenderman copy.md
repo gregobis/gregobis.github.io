@@ -2,7 +2,11 @@
 layout: post
 band: MJ Lenderman
 album: Manning Fireworks
+<<<<<<< HEAD
 label: ANTI-
+=======
+label: ANTI- Records
+>>>>>>> 45abd1d (wishy, sour widows)
 featured: true
 year: 2024
 categories: [mastering]
