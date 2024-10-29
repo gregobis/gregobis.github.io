@@ -1,17 +1,19 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import { NavLink, Flex, MenuButton } from 'theme-ui'
-import styles from './Navigation.module.css'
-
+import { useStaticQuery, graphql } from 'gatsby'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const NavBar = () => {
   const data = useStaticQuery(graphql`
     query NavQuery {
-      site {
-        siteMetadata {
-          title
+      allContentfulMe(
+        filter: { contentful_id: { eq: "UBWBtTQcJcEJ4madRTVQh" } }
+        ) {
+          nodes {
+            name
+          }
         }
-      }
       allContentfulPage(filter: {addToNav: {eq: true}}) {
         nodes {
           tItle
@@ -20,28 +22,23 @@ const NavBar = () => {
       }
     }
   `)
-  const siteTitle = data.site.siteMetadata.title
+  const logo = data.allContentfulMe.nodes[0]
   const pages = data.allContentfulPage.nodes
+
   return (
-    <nav>
-      <Flex>
-        <div>
-          <Link
-            href="/"
-            className={styles.brand}>
-              { siteTitle}
-          </Link>
-        </div>
-        <MenuButton aria-label="Toggle Menu" />
-        <Flex as="nav">
-          {pages.map((page) => 
-            <NavLink href={`/${page.slug}`} p={2}>
-              {page.tItle}
-            </NavLink>
-          )}
-        </Flex>
-      </Flex>
-    </nav>
+    <Navbar expand="lg" bg="light" data-bs-theme="light">
+      <Container>
+        <Navbar.Brand rel="author" href="/">{ logo.name }</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav>
+            {pages.map((page) =>
+              <Nav.Link href={`/${page.slug}`}>{page.tItle}</Nav.Link>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+        </Container>
+    </Navbar>
   )
 }
 

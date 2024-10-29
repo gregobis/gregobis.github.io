@@ -1,32 +1,37 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
-import { Heading } from 'theme-ui'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
-import ProjectPreview from '../components/ProjectPreview'
+import ProjectFilterButtons from '../components/ProjectFilterButtons'
+import Container from "react-bootstrap/Container"
+import DynamicHero from '../components/DynamicHero'
+import ProjectList from '../components/ProjectList'
+
 
 const Projects = ({location, data}) => {
-  const [projectFilter, setProjectFilter] = useState()
-  const siteTitle = data.site.siteMetadata.title
+  const siteTitle = data.site.siteMetadata.title  
+  const categories = data.allContentfulCategory.edges
   const projects = data.allContentfulProject.edges
 
   return (
     <Layout location={location.pathname}>
-      <div style={{ background: '#fff' }}>
-        <Helmet title={`${siteTitle} | ${projectFilter} Projects`} />
+        <Helmet
+          title={`${siteTitle} | Projects`}
+          description="Greg Obis is an audio engineer that has worked
+          with artists on labels such as Sub Pop, Matador, ANTI-,
+          Car Park, Sacred Bones, Numero Group, Fire Talk, 
+          and International Anthem. 
+          A personable and skilled audio engineer,
+          Greg specializes in mastering, recording, and mixing records.
+          Contact him to discuss your project."
+        />
         <div className="wrapper">
-          <Heading as="h2">Projects</Heading>
-          <ul className="article-list">
-            {projects.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <ProjectPreview project={node} />
-                </li>
-              )
-            })}
-          </ul>
+          <DynamicHero color="malachite" title="Projects"/>
+          <Container className="py-5">
+            <ProjectFilterButtons categories={categories}/>
+            <ProjectList projects={projects}/>
+          </Container>
         </div>
-      </div>
     </Layout>
   )
 }
@@ -40,7 +45,19 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulProject(sort: { fields: [year], order: DESC }) {
+    allContentfulCategory {
+      edges {
+        node {
+          title
+          color {
+            name
+            colorPicker
+          }
+          slug
+        }
+      }
+    }
+    allContentfulProject(sort: {year: DESC}) {
       edges {
         node {
           album
@@ -48,6 +65,10 @@ export const pageQuery = graphql`
           featured
           categories {
             title
+            color {
+              name
+              colorPicker
+          }
           }
           year
           label

@@ -1,21 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
 import HomepageHero from '../components/HomepageHero'
 import Layout from '../components/Layout'
 import FeaturedProjects from '../components/FeaturedProjects'
 import ContactMe from '../components/ContactMe'
 
 const Homepage = ({location, data}) => {
-  const siteTitle = data.site.siteMetadata.title
-  const projects = data.allContentfulProject.edges
-  const [greg] = data.allContentfulMe.edges
+  const siteTitle = data?.site.siteMetadata.title
+  const projects = data?.allContentfulProject.edges
+  const [greg] = data?.allContentfulMe.edges
 
   return (
-    <Layout location={location.pathname}>
-      <Helmet title={siteTitle}>
-        <script src="https://kit.fontawesome.com/db2dea25fe.js" crossorigin="anonymous"></script>
-      </Helmet>
+    <Layout location={location.pathname} siteTitle={siteTitle}>
       <HomepageHero data={greg.node} />
       <FeaturedProjects projects={projects}/>
       <ContactMe />
@@ -25,7 +21,7 @@ const Homepage = ({location, data}) => {
 
 export default Homepage
 
-export const pageQuery = graphql`
+export const pageQuery = await  graphql`
   query HomeQuery {
     site {
       siteMetadata {
@@ -38,10 +34,7 @@ export const pageQuery = graphql`
         slug
       }
     }
-    allContentfulProject(
-      sort: { fields: [year], order: DESC }
-      filter: { featured: { eq: true} }
-    ) {
+    allContentfulProject(sort: {year: DESC}, filter: {featured: {eq: true}}) {
       edges {
         node {
           album
@@ -49,6 +42,9 @@ export const pageQuery = graphql`
           featured
           categories {
             title
+            color {
+              name
+            }
           }
           year
           label
@@ -58,9 +54,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulMe(
-      filter: { contentful_id: { eq: "UBWBtTQcJcEJ4madRTVQh" } }
-    ) {
+    allContentfulMe(filter: {contentful_id: {eq: "UBWBtTQcJcEJ4madRTVQh"}}) {
       edges {
         node {
           name

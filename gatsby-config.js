@@ -31,17 +31,36 @@ module.exports = {
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
-    {
-      resolve: `gatsby-plugin-theme-ui`,
-      options: {
-        preset: "@theme-ui/preset-roboto",
-      },
-    },
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
+    {
+      resolve: "gatsby-omni-font-loader",
+      options: {
+        mode: "async",
+        enableListener: true,
+        preconnect: ["https://fonts.googleapis.com"],
+        custom: [
+          {
+            name: ["terminal_grotesque"],
+            file: "/fonts.css",
+          },
+        ],
+        web: [{
+            name: "Roboto",
+            file: "https://fonts.googleapis.com/css2?family=Roboto",
+          },
+          {
+            name: "Roboto Mono",
+            file: "https://fonts.googleapis.com/css2?family=Roboto+Mono",
+          },
+        ],
+      },
+    }
   ],
 }
