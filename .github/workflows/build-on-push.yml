@@ -25,7 +25,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
@@ -38,3 +38,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          spaceId: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          accessToken: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
