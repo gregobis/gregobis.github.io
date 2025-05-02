@@ -12,7 +12,7 @@ const FeaturedProjects = ({ projects }) => {
             <Container className="my-5">
                 <h2 className="text-center">Projects</h2>        
                 <Row className="py-4">
-                    {projects.map(({ node }) => {
+                    {projects.slice(0, 3).map(({ node }) => {
                         return (
                             <ProjectPreview project={node}/>
                         )
@@ -25,7 +25,6 @@ const FeaturedProjects = ({ projects }) => {
                 </Row>
             </Container>
         </Container>
-
     )
 }
 export default FeaturedProjects

@@ -5,7 +5,6 @@ import * as styles from "./ProjectPreview.module.css"
 
 const ProjectPreview = ({ project }) => {
   const {band, album, label, year, embed, categories}= project
-  console.log("project", project)
   
 return (
   <Col sm="6" md="4" className="py-4 text-center d-flex flex-column justify-content-between align-items-center mx-auto">
@@ -14,8 +13,8 @@ return (
     <span className={styles.albumName}>{ album }</span>
     <span className={styles.categories}>
     {categories.map((category, index)=> 
-      <span>
-        <span key={index} className={`darken-${category.color.name}--text`}>
+      <span key={index}>
+        <span className={`darken-${category.color.name}--text`}>
           {category.title}
         </span>
         <span>{index !== categories.length - 1 ? ' | ' : ''}</span>

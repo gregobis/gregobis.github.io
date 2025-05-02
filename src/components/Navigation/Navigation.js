@@ -32,8 +32,8 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            {pages.map((page) =>
-              <Nav.Link href={`/${page.slug}`}>{page.tItle}</Nav.Link>
+            {pages.map((page, index) =>
+              <Nav.Link key={index} href={`/${page.slug}`}>{page.tItle}</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>

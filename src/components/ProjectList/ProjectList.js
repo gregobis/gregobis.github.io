@@ -5,9 +5,9 @@ import Row from "react-bootstrap/Row"
 const ProjectList = ({ projects }) => {
   return (
     <Row>
-      {projects.map(({ node }) => {
+      {projects.map(({ node }, index) => {
         return (
-            <ProjectPreview project={node} />
+            <ProjectPreview key={index} project={node} />
         )
       })}
     </Row>

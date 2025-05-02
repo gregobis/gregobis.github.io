@@ -16,7 +16,7 @@ const Contact = ({location}) => {
         }
     }
   `)
-  console.log("data", data)
+
   const imageUrl = data.allContentfulMe.nodes[0].image.url
     return (
       <Layout location={location.pathname}>

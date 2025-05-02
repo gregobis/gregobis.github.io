@@ -13,7 +13,6 @@ const Projects = ({location, data, pageContext}) => {
   const siteTitle = data.site.siteMetadata.title  
   const categories = data.allContentfulCategory.edges
   const projects = data.filteredProjects.edges
-  console.log("projects", projects)
 
   return (
     <Layout location={location.pathname}>

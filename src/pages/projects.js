@@ -12,6 +12,9 @@ const Projects = ({location, data}) => {
   const siteTitle = data.site.siteMetadata.title  
   const categories = data.allContentfulCategory.edges
   const projects = data.allContentfulProject.edges
+  const featuredProjects = projects.filter(({node}) => node.featured === true)
+  const nonFeaturedProjects = projects.filter(({node}) => node.featured === false)
+  const allProjectsOrdered = [...featuredProjects, ...nonFeaturedProjects]
 
   return (
     <Layout location={location.pathname}>
@@ -29,7 +32,7 @@ const Projects = ({location, data}) => {
           <DynamicHero color="malachite" title="Projects"/>
           <Container className="py-5">
             <ProjectFilterButtons categories={categories}/>
-            <ProjectList projects={projects}/>
+            <ProjectList projects={allProjectsOrdered}/>
           </Container>
         </div>
     </Layout>

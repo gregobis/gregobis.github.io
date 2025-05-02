@@ -12,8 +12,8 @@ const ProjectFilterButtons = ({categories}) => {
                 <Col xs={12} md={6} lg={3} className="my-1">
                     <Button bsPrefix="custom-btn" className="btn malachite--btn w-100" href="/projects">All</Button>
                 </Col>
-                {categories.map(({node}) => 
-                    <Col xs={12} md={6} lg={3} className="my-1">
+                {categories.map(({node}, index) => 
+                    <Col key={index} xs={12} md={6} lg={3} className="my-1">
                         <Button bsPrefix="custom-btn" className={`btn ${node.color.name}--btn w-100`} href={`/projects/${node.slug}`}>
                             {node.title}
                         </Button>
