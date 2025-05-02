@@ -38,5 +38,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+        env:
           spaceId: ${{ secrets.CONTENTFUL_SPACE_ID }}
           accessToken: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
