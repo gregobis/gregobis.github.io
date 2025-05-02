@@ -30,7 +30,6 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: yarn install --frozen-lockfile
-      - run: yarn format
       - run: yarn build
 
       - name: Deploy
