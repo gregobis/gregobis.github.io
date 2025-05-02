@@ -5,7 +5,7 @@ import Footer from '../Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../../../static/styles.scss"
 
-const Layout = ({siteTitle, children}) => {
+const Layout = ({siteTitle="Greg Obis", children}) => {
     let rootPath = `/`
     if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
       rootPath = __PATH_PREFIX__ + `/`
