@@ -1,1 +1,1 @@
-export {default} from './ProjectFilterButtons';
+export { default } from './ProjectFilterButtons'

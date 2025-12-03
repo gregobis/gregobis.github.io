@@ -21,7 +21,7 @@ exports.createPages = async function ({ actions, graphql }) {
         }
     `)
     data.allContentfulCategory.edges.forEach(edge => {
-        const {slug, color: { name: colorName }, title} = edge.node 
+        const {slug, color: { name: colorName }, title} = edge.node;
         actions.createPage({
             path: `/projects/${slug}`,
             component: require.resolve(`./src/templates/project-category.js`),
@@ -29,7 +29,7 @@ exports.createPages = async function ({ actions, graphql }) {
                 projectFilter: slug,
                 color: colorName,
                 filterTitle: title,
-              },
+            },
         })
     })
 }

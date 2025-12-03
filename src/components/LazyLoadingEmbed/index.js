@@ -1,1 +1,1 @@
-export {default} from './LazyLoadingEmbed';
+export { default } from './LazyLoadingEmbed'

@@ -1,1 +1,1 @@
-export {default} from './DynamicHero';
+export { default } from './DynamicHero'

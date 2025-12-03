@@ -3,38 +3,37 @@ import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Layout from '../components/Layout'
 import ProjectFilterButtons from '../components/ProjectFilterButtons'
-import Container from "react-bootstrap/Container"
+import Container from 'react-bootstrap/Container'
 import DynamicHero from '../components/DynamicHero'
 import ProjectList from '../components/ProjectList'
 
-
-const Projects = ({location, data}) => {
-  const siteTitle = data.site.siteMetadata.title  
+const Projects = ({ location, data }) => {
+  const siteTitle = data.site.siteMetadata.title
   const categories = data.allContentfulCategory.edges
   const projects = data.allContentfulProject.edges
-  const featuredProjects = projects.filter(({node}) => node.featured === true)
-  const nonFeaturedProjects = projects.filter(({node}) => node.featured === false)
+  const featuredProjects = projects.filter(({ node }) => node.featured === true)
+  const nonFeaturedProjects = projects.filter(({ node }) => node.featured === false)
   const allProjectsOrdered = [...featuredProjects, ...nonFeaturedProjects]
 
   return (
     <Layout location={location.pathname}>
-        <Helmet
-          title={`${siteTitle} | Projects`}
-          description="Greg Obis is an audio engineer that has worked
+      <Helmet
+        title={`${siteTitle} | Projects`}
+        description="Greg Obis is an audio engineer that has worked
           with artists on labels such as Sub Pop, Matador, ANTI-,
           Car Park, Sacred Bones, Numero Group, Fire Talk, 
           and International Anthem. 
           A personable and skilled audio engineer,
           Greg specializes in mastering, recording, and mixing records.
           Contact him to discuss your project."
-        />
-        <div className="wrapper">
-          <DynamicHero color="malachite" title="Projects"/>
-          <Container className="py-5">
-            <ProjectFilterButtons categories={categories}/>
-            <ProjectList projects={allProjectsOrdered}/>
-          </Container>
-        </div>
+      />
+      <div className="wrapper">
+        <DynamicHero color="malachite" title="Projects" />
+        <Container className="py-5">
+          <ProjectFilterButtons categories={categories} />
+          <ProjectList projects={allProjectsOrdered} />
+        </Container>
+      </div>
     </Layout>
   )
 }
@@ -60,7 +59,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulProject(sort: {year: DESC}) {
+    allContentfulProject(sort: { year: DESC }) {
       edges {
         node {
           album
@@ -71,7 +70,7 @@ export const pageQuery = graphql`
             color {
               name
               colorPicker
-          }
+            }
           }
           year
           label
