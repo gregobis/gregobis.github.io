@@ -1,3 +1,7 @@
+.lazyEmbedContainer {
+  min-height: 170px;
+}
+
 .iframe {
-    border: 0
+  border: 0;
 }
