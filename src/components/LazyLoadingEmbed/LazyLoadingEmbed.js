@@ -1,52 +1,62 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import * as styles from './LazyLoadingEmbed.module.css'
 
-const LazyLoadingEmbed = (embed, album) => {
+const LazyLoadingEmbed = ({ embed, album }) => {
   const [isVisible, setIsVisible] = useState(false)
-  const iframeRef = useRef(null)
+  const embedRef = useRef(null)
 
   useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true)
+      return undefined
+    }
+
+    if (!embedRef.current) {
+      return undefined
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          observer.disconnect() // Stop observing once visible
+          observer.disconnect()
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the component is visible
+      { threshold: 0.1 }
     )
 
-    if (iframeRef.current) {
-      observer.observe(iframeRef.current)
-    }
+    observer.observe(embedRef.current)
 
-    return () => {
-      if (iframeRef.current) {
-        observer.unobserve(iframeRef.current)
-      }
-    }
+    return () => observer.disconnect()
   }, [])
 
-  const embedSplit = embed.embed.embed.split(' ')
-  const src = embedSplit.find((string) => {
-    return string.startsWith('src')
-  })
-  const srcSplit = src.split('/')
-  const albumId = srcSplit.find((string) => {
-    return string.startsWith('album=')
-  })
-  const formattedSrcUrl = `https://bandcamp.com/EmbeddedPlayer/${albumId}/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/`
-  const href = embedSplit.find((string) => {
-    return string.startsWith('href')
-  })
+  const embedHtml = embed?.embed
+
+  if (!embedHtml || typeof embedHtml !== 'string') {
+    return null
+  }
+
+  const srcMatch = embedHtml.match(/src=["']([^"']+)["']/)
+
+  if (!srcMatch) {
+    return null
+  }
+
+  const albumMatch = srcMatch[1].match(/album=([^/&]+)/)
+
+  if (!albumMatch) {
+    return null
+  }
+
+  const formattedSrcUrl = `https://bandcamp.com/EmbeddedPlayer/album=${albumMatch[1]}/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/`
 
   return (
-    <div ref={iframeRef} className={styles.lazyEmbedContainer}>
+    <div ref={embedRef} className={styles.lazyEmbedContainer}>
       {isVisible && (
         <iframe
-          title={`${album} bandcamp embed`}
-          width="170px"
-          height="170px"
+          title={`${album || 'Album'} Bandcamp embed`}
+          width="170"
+          height="170"
           className={styles.iframe}
           src={formattedSrcUrl}
           seamless
