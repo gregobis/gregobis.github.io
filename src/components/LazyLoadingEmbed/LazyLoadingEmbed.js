@@ -2,7 +2,7 @@ import React from 'react'
 import * as styles from './LazyLoadingEmbed.module.css'
 
 const LazyLoadingEmbed = ({ embed, album }) => {
-  const embedHtml = embed?.embed
+  const embedHtml = embed?.embed?.embed || embed?.embed
 
   if (!embedHtml || typeof embedHtml !== 'string') {
     return null
@@ -14,13 +14,7 @@ const LazyLoadingEmbed = ({ embed, album }) => {
     return null
   }
 
-  const albumMatch = srcMatch[1].match(/album=([^/&]+)/)
-
-  if (!albumMatch) {
-    return null
-  }
-
-  const formattedSrcUrl = `https://bandcamp.com/EmbeddedPlayer/album=${albumMatch[1]}/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/`
+  const formattedSrcUrl = srcMatch[1]
 
   return (
     <div className={styles.lazyEmbedContainer}>
